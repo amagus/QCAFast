@@ -1,0 +1,81 @@
+/* app css stylesheet */
+
+body {
+
+}
+
+.stepviewer, .looped{
+    position: absolute;
+    right: 50px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+}
+
+.looped{
+    font-size: 24px !important;
+    top: 60px;
+}
+
+.substract{
+	background-color: white;
+	height: 100%;
+}
+
+.line{
+	float:left;
+	clear:both;
+}
+.cellNull{
+	background-color: white !important;
+}
+.cellInput{
+	border: 10px solid navy;
+	padding-top: 5px !important;
+}
+.cellOutput{
+	border: 10px solid tan;
+	padding-top: 5px !important;
+}
+.cellChanged{
+    color: red !important;
+    font-weight: bold;
+}
+.cellFixed0{
+	padding-top: 5px !important;
+	border: 10px solid red;
+}
+.cellTransp{
+	opacity: 0.5;
+}
+.cellFixed1{
+	padding-top: 5px !important;
+	border: 10px solid red;
+}
+.cellClock0{
+	background-color: darkgreen !important;
+}
+.cellClock1{
+	background-color: darkmagenta !important;
+}
+.cellClock2{
+	background-color: turquoise !important;
+}
+.cellClock3{
+	background-color: darkorange !important;
+}
+.cellInvalid:after{
+    content:"❌";
+}
+.cell{
+	float:left;
+	width: 50px;
+	height: 50px;
+	background-color: gray;
+	margin-left: 5px;
+	margin-top: 5px;
+	text-align: center;
+	padding-top: 15px;
+	color: black;
+}

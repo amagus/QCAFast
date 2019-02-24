@@ -1,0 +1,19 @@
+In beyond silicon research, Quantum-dot Cellular Automata (QCA) emerged as a candidate for replacing the traditional CMOS logic circuits. QCA is a paradigm based on the exchange of information between cells that take advantage of Coulomb's law. In this work, we present techniques that expand and accelerate the validation of designs created using QCADesigner simulator. The circuit is split into small independent regions which could be verified for common mistakes such as cell misplacements and synchronization issues. Those small circuits chops can also be arranged for parallel simulation allowing speed ups of approximately five times faster. The output from such devices can be used to build a model where logical prepositions could be evaluated.  The entire process can vastly reduce the time for full circuitry validation and help adoption of the paradigm.
+
+Project presented as a Master thesis in December 2017 by Luiz Sardinha (Nanocomp - DCC/UFMG)
+
+IMPORTANT
+============================
+
+Please note that the use of this code is given with no warranties and no support, but feel free to contact me if you have any problem or question.
+
+CONTENTS
+============================
+
+This repository contains the graphic interface to view matrix file circuits and the nodejs based simulation and verification interface.
+
+Prior to running, please update your local build settings in js/genSim.js file.
+
+To run:
+
+node genSim.js <matrix.txt>

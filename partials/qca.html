@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+      Display:
+      <select ng-model="displayProp">
+        <option value="0">ID</option>
+        <option value="1">Clock #</option>
+        <option value="2">Steps</option>
+        <option value="3">Neighborhood</option>
+        <option value="99">Default</option>
+      </select>
+      <br />
+      Steps:
+      <br />
+      <textarea ng-model="stepsText">
+      
+      </textarea>
+      <br />
+      <button ng-click="stepsFun()">View steps</button>
+      
+      <div ng-if="displayProp == 2">
+      <button ng-click="step(-1)">-</button>
+      {{curStep}}
+      <button ng-click="step(1)">+</button>
+      </div>
+      
+    </div>
+    <div class="col-md-10 substract">
+      <!--Body content-->
+      <div class="stepviewer" ng-if="displayProp == 2">
+          {{curStep}}
+      </div>
+      
+      <div class="looped" ng-if="displayProp == 2 && justLooped">
+          Looped
+      </div>
+      
+	  <div class="line" ng-repeat="line in CellMatrix">
+			<div class="cell" ng-class="{
+					cellTransp:  !inInfBy(cell),
+    				cellInvalid: cell.invalid,
+					cellNull:    !cell,
+					cellInput:   cell.type == CELL_INPUT,
+					cellOutput:  cell.type == CELL_OUTPUT,
+					cellFixed0:  cell.type == CELL_FIXED_0,
+					cellFixed1:  cell.type == CELL_FIXED_1,
+					cellClock0:  cell.clock == 0,
+					cellClock1:  cell.clock == 1,
+					cellClock2:  cell.clock == 2,
+					cellClock3:  cell.clock == 3,
+					cellChanged: displayProp == 2 && steps[curStep][cell.uid].changed
+				}" 
+				  ng-mouseover='setInf(cell)'
+				  ng-mouseout='setInf(null)'
+				  ng-repeat="cell in line track by $index">
+					{{displayProp == 2 && cell.type != CELL_FIXED_0 && cell.type != CELL_FIXED_1 ? (steps[curStep][cell.uid].val) : cell.display(displayProp)}}  
+			</div>
+	  </div>
+      
+
+    </div>
+  </div>
+</div>
